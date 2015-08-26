@@ -1,0 +1,2 @@
+manaflare = angular.module('manaflare',[
+])
