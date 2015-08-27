@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require interact
+//= require jquery.transit
 //= require angular/angular
 //= require_tree .

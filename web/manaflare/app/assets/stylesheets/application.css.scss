@@ -15,3 +15,13 @@
  */
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+card {
+  width: 138px;
+  height: 200px;
+  background-color: red;
+  display: block;
+  border-radius: 4px;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
