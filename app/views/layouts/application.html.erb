@@ -6,9 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body class="vbox viewport">
+<section class="main hbox space-between" ng-app="manaflare">
 <%= yield %>
-
+</section>
 </body>
 </html>
