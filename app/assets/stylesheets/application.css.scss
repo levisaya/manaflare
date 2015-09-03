@@ -134,8 +134,27 @@ aside, nav {
   flex: 1;
 }
 
-$card-width: 138px;
-$card-height: 200px;
+$card_width_mm: 63;
+$card_height_mm: 87;
+$border_mm: 3;
+$inner_border_mm: 1.5;
+$text_bar_height_mm: 5;
+$image_height_mm: 40;
+$text_box_height_mm: 26;
+
+$size-multiplier: 2;
+
+$card-width: ($card_width_mm * $size-multiplier);
+$card-height: ($card_height_mm * $size-multiplier);
+$border-width: ($border_mm * $size-multiplier);
+$inner-border-width: ($inner_border_mm * $size-multiplier);
+
+$text_bar_width: ($card-width - $border-width * 2 - $inner-border-width);
+$text_bar_height: ($text_bar_height_mm * $size-multiplier);
+
+$image_height: ($image_height_mm * $size-multiplier);
+
+$text_box_height: ($text_box_height_mm * $size-multiplier);
 
 #play-area {
   width: 100%;
@@ -150,17 +169,17 @@ $card-height: 200px;
 }
 
 #redzone {
-  height: $card-height * 1.2;
+  height: $card-height * 1.2px;
   margin-left: 2%;
   margin-right: 2%;
   padding-bottom: 5%;
   background-color: firebrick;
 }
 
-card {
-  width: $card-width;
-  height: $card-height;
-  background-color: red;
+.card {
+  width: $card-width + px;
+  height: $card-height + px;
+  background-color: black;
   display: block;
   position: absolute;
   left: 0;
@@ -168,4 +187,58 @@ card {
   border-radius: 4px;
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
+}
+
+.card-inner {
+  border-radius: ($border-width / 3) + px;
+  background-color: sandybrown;
+  width: ($card-width - ($border-width * 2)) + px;
+  height: ($card-height - ($border-width * 2)) + px;
+  position: relative;
+  left: $border-width + px;
+  top: $border-width + px;
+}
+
+.card-text-bar {
+  width: $text_bar_width + px;
+  height: $text_bar_height + px;
+  background-color: darkolivegreen;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $inner-border-width+px/($text_bar_height/2)+px;
+}
+
+#top-text-bar {
+  position: relative;
+  top: $inner-border-width + px;
+}
+
+#card-image {
+  position: relative;
+  top: $inner-border-width + px;
+  height: $image_height+px;
+  width: ($card-width - ($border-width * 2) - ($inner-border-width * 2))+px;
+  background: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#card-image > img {
+  width: 100%;
+  height: 100%;
+}
+
+#type-text-bar {
+  position: relative;
+  top: $inner-border-width + px;
+}
+
+#text-box {
+  height: $text_box_height + px;
+  width: ($card-width - ($border-width * 2) - ($inner-border-width * 2))+px;
+  background-color: forestgreen;
+  position: relative;
+  top: $inner-border-width + px;
+  margin-left: auto;
+  margin-right: auto;
 }

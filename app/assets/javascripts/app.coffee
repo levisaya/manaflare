@@ -1,8 +1,9 @@
-manaflare = angular.module('manaflare',[
-])
+manaflare = angular.module('manaflare',['templates'])
 
 manaflare.directive 'card', () ->
   restrict: 'E'
+  templateUrl: 'card.html'
+  replace: true
   link: (scope, elem, attrs) ->
     x = 0
     y = 0
@@ -23,7 +24,7 @@ manaflare.directive 'card', () ->
         endOnly: true
       onmove: drag_move_listener
 
-    interact('card')
+    interact('.card')
       .draggable(draggable_params)
       .on('doubletap', (event) ->
         event.preventDefault()
