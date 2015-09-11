@@ -68,12 +68,3 @@ manaflare.directive 'card', () ->
           else if $(elem).css('rotate') == '0deg' and event.da > 30
             $(elem).transition({rotate: '90deg'}, 500, 'snap')
       )
-#
-#    $(elem).bind 'contextmenu', (event) ->
-#      if event.which == 3
-#        if $(this).css('rotate') == '90deg'
-#          $(this).transition({rotate: '0deg'}, 500, 'snap')
-#        else
-#          $(this).transition({rotate: '90deg'}, 500, 'snap')
-#        return false
-#      return true
