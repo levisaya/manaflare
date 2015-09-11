@@ -44,7 +44,7 @@ GameController = (function() {
 
 })();
 
-manaflare.controller('GameController', GameController);
+manaflare.controller('GameController', ['$scope', GameController]);
 
 manaflare.directive('card', function() {
   return {

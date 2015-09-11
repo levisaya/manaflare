@@ -26,7 +26,7 @@ class GameController
   @draw_card: ->
     @$scope.active_cards.push(@example_card_data)
 
-manaflare.controller('GameController', GameController)
+manaflare.controller('GameController', ['$scope', GameController])
 
 manaflare.directive 'card', () ->
   restrict: 'E'
