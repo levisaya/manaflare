@@ -142,7 +142,7 @@ $text_bar_height_mm: 5;
 $image_height_mm: 40;
 $text_box_height_mm: 26;
 
-$size-multiplier: 2;
+$size-multiplier: 3;
 
 $card-width: ($card_width_mm * $size-multiplier);
 $card-height: ($card_height_mm * $size-multiplier);
@@ -241,4 +241,12 @@ $text_box_height: ($text_box_height_mm * $size-multiplier);
   top: $inner-border-width + px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.card-text {
+  color: black;
+}
+
+.card-text-bar > .card-text {
+
 }

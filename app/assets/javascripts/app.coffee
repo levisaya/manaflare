@@ -1,4 +1,32 @@
-manaflare = angular.module('manaflare',['templates'])
+manaflare = angular.module('manaflare', ['templates', 'ui.router'])
+
+class GameController
+  constructor: (@$scope) ->
+    example_card_data =
+      "layout": "normal"
+      "type": "Sorcery"
+      "types": ["Sorcery"]
+      "colors": ["Green"]
+      "multiverseid": 23145
+      "name": "Restock"
+      "originalType": "Sorcery"
+      "cmc": 5
+      "rarity": "Rare"
+      "artist": "Daren Bader"
+      "manaCost": "{3}{G}{G}"
+      "text": "Return two target cards from your graveyard to your hand. Exile Restock."
+      "originalText":"Return two target cards from your graveyard to your hand. Remove Restock from the game."
+      "flavor": "\"We hid such stockpiles all over Rath. We should continue that practice here.\"\n—Lin Sivvi"
+      "number":"206"
+      "imageName":"restock"
+      "foreignNames":[{"language":"French", "name":"Restockage", "multiverseid":"185498"}]
+    $scope.active_cards = [example_card_data]
+    $scope.ctrl = @
+  
+  @draw_card: ->
+    @$scope.active_cards.push(@example_card_data)
+
+manaflare.controller('GameController', GameController)
 
 manaflare.directive 'card', () ->
   restrict: 'E'

@@ -1,9 +1,9 @@
 <div id="status-sidebar"></div>
-<div id="play-area">
+<div id="play-area" ng-controller="GameController">
   <div class="vbox">
     <div id="redzone"></div>
   </div>
+  <span ng-repeat="active_card in active_cards">
+	<card></card>
+  </span>
 </div>
-<card>
-    This is a card, for real. Left click+drag to move, double click to tap/untap.
-</card>

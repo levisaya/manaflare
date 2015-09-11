@@ -3,4 +3,5 @@ asset 'bootstrap-sass-official'
 asset 'interact'
 asset 'jquery.transit'
 asset 'angular-route'
+asset 'angular-ui-router'
 # vim: ft=ruby
